@@ -41,7 +41,7 @@ html.no_accessible {
     visibility: hidden;
   }
 
-  .start {
+  .widgets {
     a {
       color: green;
       &:visited {
@@ -59,13 +59,13 @@ html.no_accessible {
     .intro {
       position: absolute;
     }
-    .start {
+    .widgets {
       position: absolute;
     }
   }
 
   .starwars {
-    .start {
+    .widgets {
       button {
         font-size: 300%;
       }
@@ -96,10 +96,24 @@ html.no_accessible {
 
   .starwars {
     section {
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      z-index: 1;
+      &.intro,
+      &.logo,
+      &.start,
+      &.titles {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        z-index: 1;
+      }
+    }
+
+    @if false {
+      .story {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        z-index: 1;
+      }
     }
 
     .intro {
@@ -118,8 +132,8 @@ html.no_accessible {
     .titles {
       overflow: hidden;
 
-      > div.story {
-        > p {
+      div.story {
+        p {
           margin: 1.35em 0 1.85em 0;
           line-height: 1.35em;
         }
@@ -143,10 +157,11 @@ html.no_accessible {
         font-size: 350%;
         transform-origin: 50% 100%;
         @include transform(perspective(300px) rotateX(25deg));
-        > div.story {
+        div.story {
           position: absolute;
           top: 100%;
-          animation: titles 60s linear 13s;
+          bottom: -100%;
+          animation: titles 60s linear 19s;
           > p {
             @include backface-visibility(hidden);
           }
@@ -154,12 +169,6 @@ html.no_accessible {
       }
     }
 
-    section {
-      position: absolute;
-      top: 45%;
-      left: 50%;
-      z-index: 1;
-    }
     .intro {
       $intro-width: 15em;
       width: $intro-width;
@@ -179,13 +188,33 @@ html.no_accessible {
       $titles-width: 14.65em;
       width: $titles-width;
       margin: 0 0 0 (-$titles-width / 2);
-      > div.story {
+      div.story {
       }
     }
   }
 
+  .main_animation {
+    position: fixed;
+    // bottom: 0;
+    // animation: main_animation 6s ease-out 1s;
+    animation: main_animation 60s linear 18.5s;
+  }
+
   .main_animation.hidden {
     display: none;
+  }
+
+  @keyframes main_animation {
+    0% {
+      // opacity: 0;
+      bottom: 0;
+    }
+    10% {
+      bottom: 0;
+    }
+    100% {
+      bottom: 0;
+    }
   }
 
   @keyframes intro {
@@ -259,7 +288,8 @@ article.starwars,
   }
 }
 
-.start {
+.start,
+.widgets {
   &.hide {
     display: none;
   }

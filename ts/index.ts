@@ -42,6 +42,7 @@ class StarWars {
   public stopped: boolean;
   public timeout_id: any;
   public title_selector: string;
+  public widgets: JQuery;
   public _volume: number;
   public _volume_timeout_id: any;
   /*
@@ -59,11 +60,12 @@ class StarWars {
 
     // Start the animation
     obj.start = obj.elem.find(".start");
+    obj.widgets = $(".widgets");
     // obj.start.show();
 
     // The animation wrapper
     const old_animation = obj.elem.find(".main_animation");
-    obj.animation = old_animation.clone(true);
+    obj.animation = old_animation;
     // old_animation.remove();
 
     if (!obj.animation) {
@@ -170,16 +172,18 @@ class StarWars {
   }
   _remove_animation_element(): void {
     const obj = this;
-    const found = obj.elem.find(".main_animation");
-    if (found) {
-      found.remove();
+    if (false) {
+      const found = obj.elem.find(".main_animation");
+      if (found) {
+        found.remove();
+      }
     }
     return;
   }
   _replace_animation_element(): void {
     const obj = this;
     obj._remove_animation_element();
-    obj.elem.append(obj.animation);
+    // obj.elem.append(obj.animation);
     return;
   }
 
@@ -191,7 +195,8 @@ class StarWars {
     if (elem.hasClass("accessible_body")) {
       alert("accessible_body");
     }
-    obj.start.addClass("hide");
+    // obj.start.addClass("hide");
+    obj.widgets.addClass("hide");
     obj.audio.play();
     elem.addClass(["animation", "on"]);
     // obj.animation.addClass("animation");
@@ -212,10 +217,12 @@ class StarWars {
     const obj = this;
     $(obj.title_selector).removeClass("hide");
     // obj.start.show();
-    obj.start.removeClass("hide");
-    const cloned = obj.animation.clone(true);
-    obj.animation.remove();
-    obj.animation = cloned;
+    // obj.start.removeClass("hide");
+    obj.widgets.removeClass("hide");
+    // const cloned = obj.animation.clone(true);
+    // obj.animation.remove();
+    obj.animation.addClass(["hidden"]);
+    // obj.animation = cloned;
     const elem = obj.elem;
     elem.removeClass("animation").removeClass("on");
     return;

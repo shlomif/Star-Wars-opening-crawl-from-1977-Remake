@@ -35,11 +35,11 @@ html.no_accessible h1.hide {
   visibility: hidden;
 }
 /* line 45, ../scss/style.scss */
-html.no_accessible .start a {
+html.no_accessible .widgets a {
   color: green;
 }
 /* line 47, ../scss/style.scss */
-html.no_accessible .start a:visited {
+html.no_accessible .widgets a:visited {
   color: #888;
 }
 /* line 53, ../scss/style.scss */
@@ -57,66 +57,66 @@ html.no_accessible .starwars.accessible_body .intro {
   position: absolute;
 }
 /* line 62, ../scss/style.scss */
-html.no_accessible .starwars.accessible_body .start {
+html.no_accessible .starwars.accessible_body .widgets {
   position: absolute;
 }
 /* line 68, ../scss/style.scss */
-html.no_accessible .starwars .start {
+html.no_accessible .starwars .widgets {
   font-size: 200%;
   margin: -4em 0 0 -7em;
   text-align: center;
   cursor: pointer;
 }
 /* line 69, ../scss/style.scss */
-html.no_accessible .starwars .start button {
+html.no_accessible .starwars .widgets button {
   font-size: 300%;
 }
 /* line 73, ../scss/style.scss */
-html.no_accessible .starwars .start a {
+html.no_accessible .starwars .widgets a {
   font-size: 150%;
 }
 /* line 75, ../scss/style.scss */
-html.no_accessible .starwars .start a .arrow {
+html.no_accessible .starwars .widgets a .arrow {
   color: #a00;
 }
-/* line 98, ../scss/style.scss */
-html.no_accessible .starwars section {
+/* line 99, ../scss/style.scss */
+html.no_accessible .starwars section.intro, html.no_accessible .starwars section.logo, html.no_accessible .starwars section.start, html.no_accessible .starwars section.titles {
   position: absolute;
   top: 45%;
   left: 50%;
   z-index: 1;
 }
-/* line 105, ../scss/style.scss */
+/* line 119, ../scss/style.scss */
 html.no_accessible .starwars .intro {
   font-size: 200%;
   font-weight: 400;
   color: #4bd5ee;
 }
-/* line 113, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 html.no_accessible .starwars.animation_body .logo svg {
   width: inherit;
 }
-/* line 118, ../scss/style.scss */
+/* line 132, ../scss/style.scss */
 html.no_accessible .starwars.animation_body .titles {
   overflow: hidden;
 }
-/* line 122, ../scss/style.scss */
-html.no_accessible .starwars.animation_body .titles > div.story > p {
+/* line 136, ../scss/style.scss */
+html.no_accessible .starwars.animation_body .titles div.story p {
   margin: 1.35em 0 1.85em 0;
   line-height: 1.35em;
 }
-/* line 132, ../scss/style.scss */
+/* line 146, ../scss/style.scss */
 html.no_accessible .starwars.on.animation_body.animation .intro {
   width: 15em;
   margin: 0 0 0 -7.5em;
   opacity: 0;
   animation: intro 6s ease-out 1s;
 }
-/* line 139, ../scss/style.scss */
+/* line 153, ../scss/style.scss */
 html.no_accessible .starwars.on.animation_body.animation .logo {
   animation: logo 9s ease-out 9s;
 }
-/* line 142, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 html.no_accessible .starwars.on.animation_body.animation .titles {
   font-size: 350%;
   transform-origin: 50% 100%;
@@ -125,38 +125,32 @@ html.no_accessible .starwars.on.animation_body.animation .titles {
   -webkit-transform: perspective(300px) rotateX(25deg);
   transform: perspective(300px) rotateX(25deg);
 }
-/* line 146, ../scss/style.scss */
-html.no_accessible .starwars.on.animation_body.animation .titles > div.story {
+/* line 160, ../scss/style.scss */
+html.no_accessible .starwars.on.animation_body.animation .titles div.story {
   position: absolute;
   top: 100%;
-  animation: titles 60s linear 13s;
+  bottom: -100%;
+  animation: titles 60s linear 19s;
 }
-/* line 150, ../scss/style.scss */
-html.no_accessible .starwars.on.animation_body.animation .titles > div.story > p {
+/* line 165, ../scss/style.scss */
+html.no_accessible .starwars.on.animation_body.animation .titles div.story > p {
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 157, ../scss/style.scss */
-html.no_accessible .starwars.on.animation_body section {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  z-index: 1;
-}
-/* line 163, ../scss/style.scss */
+/* line 172, ../scss/style.scss */
 html.no_accessible .starwars.on.animation_body .intro {
   width: 15em;
   margin: 0 0 0 -7.5em;
   opacity: 0;
 }
-/* line 169, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 html.no_accessible .starwars.on.animation_body .logo {
   width: 18em;
   margin: -9em 0 0 -9em;
   opacity: 0;
 }
-/* line 174, ../scss/style.scss */
+/* line 183, ../scss/style.scss */
 html.no_accessible .starwars.on.animation_body .titles {
   top: auto;
   bottom: 0;
@@ -165,9 +159,25 @@ html.no_accessible .starwars.on.animation_body .titles {
   width: 14.65em;
   margin: 0 0 0 -7.325em;
 }
-/* line 187, ../scss/style.scss */
+/* line 196, ../scss/style.scss */
+html.no_accessible .main_animation {
+  position: fixed;
+  animation: main_animation 60s linear 18.5s;
+}
+/* line 203, ../scss/style.scss */
 html.no_accessible .main_animation.hidden {
   display: none;
+}
+@keyframes main_animation {
+  0% {
+    bottom: 0;
+  }
+  10% {
+    bottom: 0;
+  }
+  100% {
+    bottom: 0;
+  }
 }
 @keyframes intro {
   0% {
@@ -216,31 +226,32 @@ html.no_accessible .main_animation.hidden {
     opacity: 0;
   }
 }
-/* line 235, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 html.no_accessible a:focus,
 html.no_accessible button:focus {
   outline: red solid 2px;
 }
-/* line 243, ../scss/style.scss */
+/* line 272, ../scss/style.scss */
 html.no_accessible #volume_display.display_off {
   display: none;
 }
-/* line 246, ../scss/style.scss */
+/* line 275, ../scss/style.scss */
 html.no_accessible #volume_display.display_on {
   color: white;
 }
-/* line 250, ../scss/style.scss */
+/* line 279, ../scss/style.scss */
 html.no_accessible .play {
   padding: 0.1em 0.2em;
 }
 
-/* line 257, ../scss/style.scss */
+/* line 286, ../scss/style.scss */
 article.starwars > header,
 .starwars section > header {
   display: none;
 }
 
-/* line 263, ../scss/style.scss */
-.start.hide {
+/* line 293, ../scss/style.scss */
+.start.hide,
+.widgets.hide {
   display: none;
 }
