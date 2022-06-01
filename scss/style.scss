@@ -161,7 +161,7 @@ html.no_accessible {
           position: absolute;
           top: 100%;
           bottom: -100%;
-          animation: titles 60s linear 19s;
+          animation: titles 60s linear 18.1s;
           > p {
             @include backface-visibility(hidden);
           }
@@ -197,7 +197,7 @@ html.no_accessible {
     position: fixed;
     // bottom: 0;
     // animation: main_animation 6s ease-out 1s;
-    animation: main_animation 60s linear 18.5s;
+    animation: main_animation 60s linear 18.05s;
   }
 
   .main_animation.hidden {
@@ -207,9 +207,6 @@ html.no_accessible {
   @keyframes main_animation {
     0% {
       // opacity: 0;
-      bottom: 0;
-    }
-    10% {
       bottom: 0;
     }
     100% {

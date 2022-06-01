@@ -130,7 +130,7 @@ html.no_accessible .starwars.on.animation_body.animation .titles div.story {
   position: absolute;
   top: 100%;
   bottom: -100%;
-  animation: titles 60s linear 19s;
+  animation: titles 60s linear 18.1s;
 }
 /* line 165, ../scss/style.scss */
 html.no_accessible .starwars.on.animation_body.animation .titles div.story > p {
@@ -162,7 +162,7 @@ html.no_accessible .starwars.on.animation_body .titles {
 /* line 196, ../scss/style.scss */
 html.no_accessible .main_animation {
   position: fixed;
-  animation: main_animation 60s linear 18.5s;
+  animation: main_animation 60s linear 18.05s;
 }
 /* line 203, ../scss/style.scss */
 html.no_accessible .main_animation.hidden {
@@ -170,9 +170,6 @@ html.no_accessible .main_animation.hidden {
 }
 @keyframes main_animation {
   0% {
-    bottom: 0;
-  }
-  10% {
     bottom: 0;
   }
   100% {
@@ -226,31 +223,31 @@ html.no_accessible .main_animation.hidden {
     opacity: 0;
   }
 }
-/* line 264, ../scss/style.scss */
+/* line 261, ../scss/style.scss */
 html.no_accessible a:focus,
 html.no_accessible button:focus {
   outline: red solid 2px;
 }
-/* line 272, ../scss/style.scss */
+/* line 269, ../scss/style.scss */
 html.no_accessible #volume_display.display_off {
   display: none;
 }
-/* line 275, ../scss/style.scss */
+/* line 272, ../scss/style.scss */
 html.no_accessible #volume_display.display_on {
   color: white;
 }
-/* line 279, ../scss/style.scss */
+/* line 276, ../scss/style.scss */
 html.no_accessible .play {
   padding: 0.1em 0.2em;
 }
 
-/* line 286, ../scss/style.scss */
+/* line 283, ../scss/style.scss */
 article.starwars > header,
 .starwars section > header {
   display: none;
 }
 
-/* line 293, ../scss/style.scss */
+/* line 290, ../scss/style.scss */
 .start.hide,
 .widgets.hide {
   display: none;
