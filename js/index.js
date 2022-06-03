@@ -46,15 +46,11 @@ class StarWars {
         // Start the animation
         obj.start = obj._document_elem.find(".start");
         obj.widgets = $(".widgets");
-        // obj.start.show();
         // The animation wrapper
-        const old_animation = obj._document_elem.find(".main_animation");
-        obj.animation = old_animation;
-        // old_animation.remove();
+        obj.animation = obj._document_elem.find(".main_animation");
         if (!obj.animation) {
             alert("foo");
         }
-        // Remove animation and shows the start screen
         obj.reset();
         $(".accessibility").bind("click", () => {
             return obj._on_accessible_click();
@@ -62,8 +58,8 @@ class StarWars {
         obj.stopped = false;
         obj.timeout_id = null;
         obj._volume_timeout_id = null;
-        const _handle_keyboard_presses = function (my_event) {
-            const prevent = function () {
+        const _handle_keyboard_presses = (my_event) => {
+            const prevent = () => {
                 my_event.preventDefault();
                 return;
             };
@@ -153,22 +149,6 @@ class StarWars {
         obj._change_volume(VOLUME_STEP, true);
         return;
     }
-    _remove_animation_element() {
-        const obj = this;
-        if (false) {
-            const found = obj._document_elem.find(".main_animation");
-            if (found) {
-                found.remove();
-            }
-        }
-        return;
-    }
-    _replace_animation_element() {
-        const obj = this;
-        obj._remove_animation_element();
-        // obj._document_elem.append(obj.animation);
-        return;
-    }
     _title() {
         const obj = this;
         return $(obj.title_selector);
@@ -181,13 +161,10 @@ class StarWars {
         if (_document_elem.hasClass("accessible_body")) {
             alert("accessible_body");
         }
-        // obj.start.addClass("hide");
         obj.widgets.addClass("hide");
         obj.audio.play();
         _document_elem.addClass(["animation", "on"]);
-        // obj.animation.addClass("animation");
         obj.animation.removeClass("hidden");
-        obj._replace_animation_element();
         if (false) {
             obj.timeout_id = setTimeout(() => {
                 return obj._stop_audio();
