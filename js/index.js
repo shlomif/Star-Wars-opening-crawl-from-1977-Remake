@@ -31,7 +31,6 @@
  */
 const VOLUME_STEP = 5;
 const VOLUME_RANGE = 100;
-const VOLUME_factor = 1.0 / VOLUME_RANGE;
 const VOLUME_key = "starwars_volume";
 class StarWars {
     /*
@@ -41,15 +40,15 @@ class StarWars {
         const obj = this;
         obj.title_selector = args.title_selector;
         // Context wrapper
-        obj.elem = $(args.el);
+        obj._document_elem = $(args.el);
         // Audio to play the opening crawl
-        obj.audio = obj.elem.find("audio").get(0);
+        obj.audio = obj._document_elem.find("audio").get(0);
         // Start the animation
-        obj.start = obj.elem.find(".start");
+        obj.start = obj._document_elem.find(".start");
         obj.widgets = $(".widgets");
         // obj.start.show();
         // The animation wrapper
-        const old_animation = obj.elem.find(".main_animation");
+        const old_animation = obj._document_elem.find(".main_animation");
         obj.animation = old_animation;
         // old_animation.remove();
         if (!obj.animation) {
@@ -157,7 +156,7 @@ class StarWars {
     _remove_animation_element() {
         const obj = this;
         if (false) {
-            const found = obj.elem.find(".main_animation");
+            const found = obj._document_elem.find(".main_animation");
             if (found) {
                 found.remove();
             }
@@ -167,21 +166,21 @@ class StarWars {
     _replace_animation_element() {
         const obj = this;
         obj._remove_animation_element();
-        // obj.elem.append(obj.animation);
+        // obj._document_elem.append(obj.animation);
         return;
     }
     _on_play_click() {
         const obj = this;
         obj.stopped = false;
         $(obj.title_selector).addClass("hide");
-        const elem = obj.elem;
-        if (elem.hasClass("accessible_body")) {
+        const _document_elem = obj._document_elem;
+        if (_document_elem.hasClass("accessible_body")) {
             alert("accessible_body");
         }
         // obj.start.addClass("hide");
         obj.widgets.addClass("hide");
         obj.audio.play();
-        elem.addClass(["animation", "on"]);
+        _document_elem.addClass(["animation", "on"]);
         // obj.animation.addClass("animation");
         obj.animation.removeClass("hidden");
         obj._replace_animation_element();
@@ -205,8 +204,8 @@ class StarWars {
         // obj.animation.remove();
         obj.animation.addClass(["hidden"]);
         // obj.animation = cloned;
-        const elem = obj.elem;
-        elem.removeClass("animation").removeClass("on");
+        const _document_elem = obj._document_elem;
+        _document_elem.removeClass("animation").removeClass("on");
         return;
     }
     _stop_audio() {
