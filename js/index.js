@@ -169,10 +169,14 @@ class StarWars {
         // obj._document_elem.append(obj.animation);
         return;
     }
+    _title() {
+        const obj = this;
+        return $(obj.title_selector);
+    }
     _on_play_click() {
         const obj = this;
         obj.stopped = false;
-        $(obj.title_selector).addClass("hide");
+        obj._title().addClass("hide");
         const _document_elem = obj._document_elem;
         if (_document_elem.hasClass("accessible_body")) {
             alert("accessible_body");
@@ -196,14 +200,9 @@ class StarWars {
      */
     reset() {
         const obj = this;
-        $(obj.title_selector).removeClass("hide");
-        // obj.start.show();
-        // obj.start.removeClass("hide");
+        obj._title().removeClass("hide");
         obj.widgets.removeClass("hide");
-        // const cloned = obj.animation.clone(true);
-        // obj.animation.remove();
         obj.animation.addClass(["hidden"]);
-        // obj.animation = cloned;
         const _document_elem = obj._document_elem;
         _document_elem.removeClass("animation").removeClass("on");
         return;
