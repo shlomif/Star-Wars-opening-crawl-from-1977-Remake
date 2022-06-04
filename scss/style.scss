@@ -11,6 +11,9 @@ html.yes_accessible {
   body {
     padding: 2em;
   }
+  #volume_display {
+    display: none;
+  }
 }
 
 html.no_accessible {
