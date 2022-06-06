@@ -13,6 +13,14 @@ html.yes_accessible {
     font-size: 120%;
     padding: 2em;
   }
+  li {
+    margin: 1em;
+  }
+  ul {
+    $v: 2em;
+    margin-bottom: $v;
+    margin-top: $v;
+  }
   #volume_display {
     display: none;
   }
