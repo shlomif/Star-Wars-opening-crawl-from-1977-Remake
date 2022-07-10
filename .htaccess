@@ -1,2 +1,3 @@
 # Breaks the logo:
 # AddType text/html .html .xhtml
+Redirect permanent /humour/Queen-Padme-Tales/teaser/index.html /humour/Queen-Padme-Tales/teaser/
