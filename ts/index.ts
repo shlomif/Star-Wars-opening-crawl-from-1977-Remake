@@ -141,7 +141,7 @@ class StarWars {
     if (obj._volume > VOLUME_RANGE) {
       obj._volume = VOLUME_RANGE;
     }
-    obj.audio.volume = obj._volume / VOLUME_RANGE;
+    obj.audio.volume = obj._volume_muted ? 0 : obj._volume / VOLUME_RANGE;
     window.localStorage.setItem(VOLUME_key, "" + obj._volume);
     window.localStorage.setItem(
       VOLUME_muted_key,
