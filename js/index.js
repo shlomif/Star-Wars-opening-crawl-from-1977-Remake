@@ -74,6 +74,11 @@ class StarWars {
                 obj._stop_audio();
                 prevent();
             }
+            else if (my_event.which == 77 || my_event.which == 109) {
+                obj._volume_muted = !obj._volume_muted;
+                obj._change_volume(0, true);
+                prevent();
+            }
             else if (my_event.which == upkeycode) {
                 obj._volume_up();
                 prevent();
