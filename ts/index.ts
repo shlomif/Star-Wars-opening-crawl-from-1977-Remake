@@ -32,6 +32,7 @@
 const VOLUME_STEP = 5;
 const VOLUME_RANGE = 100;
 const VOLUME_key = "starwars_volume";
+const VOLUME_muted_key = "starwars_volume_muted";
 
 class StarWars {
   public animation: JQuery;
@@ -43,6 +44,7 @@ class StarWars {
   public widgets: JQuery;
   public _document_elem: JQuery;
   public _volume: number;
+  public _volume_muted: boolean;
   public _volume_timeout_id: any;
   /*
    * Constructor
@@ -114,6 +116,12 @@ class StarWars {
     } else {
       obj._volume = 80;
     }
+    const vm = window.localStorage.getItem(VOLUME_muted_key);
+    if (vm) {
+      obj._volume_muted = parseInt(vm, 10) == 0 ? false : true;
+    } else {
+      obj._volume_muted = false;
+    }
     obj._change_volume(0, false);
   }
 
@@ -135,6 +143,10 @@ class StarWars {
     }
     obj.audio.volume = obj._volume / VOLUME_RANGE;
     window.localStorage.setItem(VOLUME_key, "" + obj._volume);
+    window.localStorage.setItem(
+      VOLUME_muted_key,
+      "" + (obj._volume_muted ? "1" : "0"),
+    );
     if (display) {
       const widget = $("#volume_display");
       widget.html("Volume: " + obj._volume + "%");
