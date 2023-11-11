@@ -2,7 +2,7 @@
 
 // @import "compass/css3";
 
-@mixin backface-visibility($vis) {
+@mixin my-backface-visibility($vis) {
   -moz-backface-visibility: $vis;
   -webkit-backface-visibility: $vis;
   backface-visibility: $vis;
@@ -189,7 +189,7 @@ html.no_accessible {
           bottom: -100%;
           animation: titles 60s linear 18.1s;
           > p {
-            @include backface-visibility(hidden);
+            @include my-backface-visibility(hidden);
           }
         }
       }
