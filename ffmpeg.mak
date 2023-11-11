@@ -9,7 +9,8 @@ generated-style.css: css/style.css
 	cp -f $< $@
 
 css/style.css: scss/style.scss
-	compass compile # "$<" "$@"
+	pysassc "$<" "$@"
+	# compass compile # "$<" "$@"
 
 POST_DEST = .
 TYPESCRIPT_basenames = index.js
