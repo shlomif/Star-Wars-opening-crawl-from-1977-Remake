@@ -28,7 +28,11 @@ html.yes_accessible {
   }
   .intro {
     font-size: 200%;
-    padding: 3em;
+    @if false {
+      // padding: 3em;
+    }
+    margin-bottom: 1em;
+    margin-top: 0.7em;
   }
   li {
     margin: 1em;
@@ -69,7 +73,9 @@ html.no_accessible {
       article.animation_body {
         overflow: hidden;
       }
-      font: 700 1em "News Cycle", sans-serif;
+      font:
+        700 1em "News Cycle",
+        sans-serif;
       letter-spacing: 0.15em;
     }
   }
