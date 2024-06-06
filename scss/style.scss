@@ -64,7 +64,10 @@ html.yes_accessible {
 html.no_accessible {
   &,
   body {
-    height: 100%;
+    @if false {
+      // avoid-front-screen-scrolling
+      height: 100%;
+    }
     width: 100%;
   }
   body {

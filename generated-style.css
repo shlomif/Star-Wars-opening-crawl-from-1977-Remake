@@ -31,7 +31,6 @@ html.yes_accessible .widgets a {
 
 html.no_accessible,
 html.no_accessible body {
-  height: 100%;
   width: 100%; }
 
 html.no_accessible body {
