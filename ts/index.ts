@@ -192,8 +192,11 @@ class StarWars {
     obj.stopped = false;
     obj._title().addClass("hide");
     const _document_elem = obj._document_elem;
-    if (_document_elem.hasClass("accessible_body")) {
-      alert("accessible_body");
+    if (obj._yes_accessible()) {
+      alert(
+        "Cannot play the multimedia demo while the page is in accessibility mode.",
+      );
+      return;
     }
     obj.widgets.addClass("hide");
     obj.audio.play();
