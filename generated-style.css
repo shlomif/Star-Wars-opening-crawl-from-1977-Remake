@@ -4,6 +4,10 @@ html.yes_accessible body {
   font-size: 120%;
   padding: 2em; }
 
+html.yes_accessible .intro {
+  font-size: 200%;
+  padding: 3em; }
+
 html.yes_accessible li {
   margin: 1em; }
 
@@ -13,6 +17,14 @@ html.yes_accessible ul {
 
 html.yes_accessible #volume_display {
   display: none; }
+
+html.yes_accessible .widgets button {
+  font-size: 300%; }
+
+html.yes_accessible .widgets a {
+  font-size: 150%; }
+  html.yes_accessible .widgets a .arrow {
+    color: #a00; }
 
 html.no_accessible,
 html.no_accessible body {

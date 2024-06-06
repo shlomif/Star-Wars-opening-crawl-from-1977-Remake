@@ -26,6 +26,10 @@ html.yes_accessible {
     font-size: 120%;
     padding: 2em;
   }
+  .intro {
+    font-size: 200%;
+    padding: 3em;
+  }
   li {
     margin: 1em;
   }
@@ -36,6 +40,18 @@ html.yes_accessible {
   }
   #volume_display {
     display: none;
+  }
+  .widgets {
+    button {
+      font-size: 300%;
+    }
+
+    a {
+      font-size: 150%;
+      .arrow {
+        color: #a00;
+      }
+    }
   }
 }
 
