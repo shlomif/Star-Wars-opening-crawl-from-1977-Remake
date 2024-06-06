@@ -20,7 +20,9 @@ html.yes_accessible #volume_display {
   display: none; }
 
 html.yes_accessible .widgets button {
-  font-size: 300%; }
+  font-size: 500%;
+  padding: 10px;
+  margin: 30px; }
 
 html.yes_accessible .widgets a {
   font-size: 150%; }
